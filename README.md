@@ -1,24 +1,24 @@
-# 💸 Expense Tracker CLI
+# 💸 Smart Expense Tracker CLI (AI-Powered)
 
-> A robust, terminal-based application for managing personal finances. Built with **Python**, utilizing **Object-Oriented Programming (OOP)** principles and **CSV persistence** for data reliability.
+> A high-performance terminal application for personal finance management, now supercharged with **Google Gemini 2.0 AI** to process expenses from natural language.
 
 ---
 
 ## 📖 Overview
-This application allows users to track their daily expenses directly from the command line. Unlike simple scripts, this project is architected with scalability in mind, using distinct classes for transactions, file handling, and user interaction.
+This is not just another expense script. This project demonstrates how to bridge the gap between structured data and natural language. It allows users to log expenses manually or simply describe them in plain text (e.g., *"I spent 50 RON on sushi today"*).
+
+## 🚀 Key Features
+- **✨ AI Smart Add:** Uses **Gemini 2.0 Flash** to parse dates, amounts, categories, and descriptions from unstructured text.
+- **💾 CSV Persistence:** All data is stored locally in `data/expenses.csv`, ensuring your records are permanent.
+- **📊 Quick Summary:** Get instant insights into your spending habits by category.
+- **🛠️ Modular Architecture:** Built using SOLID principles and Object-Oriented Programming (OOP).
 
 ## 🛠️ Tech Stack
 - **Language:** Python 3.10+
-- **Data Storage:** CSV (Comma Separated Values)
-- **Paradigm:** OOP (Classes, Inheritance, Encapsulation)
+- **AI Integration:** Google GenAI SDK (Gemini 2.0 Flash)
+- **Data Storage:** CSV
 
-## ✨ Key Features
-- **Add Expenses:** Record transactions with categories, amounts, and descriptions.
-- **View History:** Display a formatted table of all past expenses.
-- **Data Persistence:** Automatically saves data to `expenses.csv` so records aren't lost on exit.
-- **Summary Statistics:** Calculates total spent per category (e.g., Food, Transport).
-
-## 🚀 How to Run
+## ⚙️ Installation & Setup
 
 1. **Clone the repository**
    ```bash
@@ -26,24 +26,40 @@ This application allows users to track their daily expenses directly from the co
    cd Expense-Tracker-CLI
    ```
 
-2. **Run the application**
+2. **Create and activate a virtual environment**
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Set up your API Key**
+   Get your free API key from [Google AI Studio](https://aistudio.google.com/) and set it as an environment variable:
+   ```bash
+   export GEMINI_API_KEY='your_secret_key_here'
+   ```
+
+5. **Run the app**
    ```bash
    python main.py
-   # OR
-   python3 main.py
    ```
 
 ## 📂 Project Structure
 ```text
 Expense-Tracker-CLI/
 ├── data/
-│   └── expenses.csv    # Data storage
+│   └── expenses.csv    # Your persistent data
 ├── src/
-│   ├── models.py       # Transaction class definitions
-│   ├── storage.py      # CSV handling logic
-│   └── ui.py           # CLI interface logic
-├── main.py             # Entry point
-└── README.md
+│   ├── models.py       # Data structures (Transaction class)
+│   ├── storage.py      # File I/O logic
+│   ├── ai_agent.py     # Gemini AI integration logic
+│   └── ui.py           # Command-line interface
+├── main.py             # App entry point
+└── requirements.txt    # Project dependencies
 ```
 
 ---
